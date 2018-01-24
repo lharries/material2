@@ -145,7 +145,7 @@ export class MatPaginator implements OnInit, OnDestroy {
     this._emitPageEvent();
   }
 
-  /** Move back to the previous page if it exists. */
+  /** Move to the last page if not already there. */
   lastPage(): void {
     // hasNextPage being false implies at the end
     if (!this.hasNextPage()) { return; }

@@ -323,6 +323,23 @@ describe('MatPaginator', () => {
     expect(element.querySelector('.mat-paginator-page-size'))
         .toBeNull('Expected select to be removed.');
   });
+
+  it('should be able to hide the go to first page" and "go to last page" buttons', () => {
+    expect(getFirstButton(fixture))
+      .toBeTruthy('Expected "go to first" button to be rendered.');
+
+    expect(getLastButton(fixture))
+      .toBeTruthy('Expected "go to last" button to be rendered.');
+
+    fixture.componentInstance.hidePageSize = true;
+    fixture.detectChanges();
+
+    expect(getFirstButton(fixture))
+      .toBeNull('Expected "go to first" button to be removed.');
+
+    expect(getLastButton(fixture))
+      .toBeNull('Expected "go to last" button to be removed.');
+  });
 });
 
 function getPreviousButton(fixture: ComponentFixture<any>) {
@@ -347,6 +364,7 @@ function getLastButton(fixture: ComponentFixture<any>) {
                    [pageSize]="pageSize"
                    [pageSizeOptions]="pageSizeOptions"
                    [hidePageSize]="hidePageSize"
+                   [hideFirstLastButtons]="hideFirstLastButtons"
                    [length]="length"
                    (page)="latestPageEvent = $event">
     </mat-paginator>
@@ -357,6 +375,7 @@ class MatPaginatorApp {
   pageSize = 10;
   pageSizeOptions = [5, 10, 25, 100];
   hidePageSize = false;
+  hideFirstLastButtons = false;
   length = 100;
 
   latestPageEvent: PageEvent | null;

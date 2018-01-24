@@ -100,8 +100,8 @@ export class MatPaginator implements OnInit, OnDestroy {
   /** Whether to hide the page size selection UI from the user. */
   @Input() hidePageSize = false;
 
-  /** Whether to hide the got to first and got to last UI from the user. */
-  @Input() hideFirstLast = false;
+  /** Whether to hide the "go to first page" and "go to last page" UI from the user. */
+  @Input() hideFirstLastButtons = false;
 
   /** Event emitted when the paginator changes the page size or page index. */
   @Output() page = new EventEmitter<PageEvent>();

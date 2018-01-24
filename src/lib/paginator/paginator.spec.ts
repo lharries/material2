@@ -132,8 +132,8 @@ describe('MatPaginator', () => {
 
       dispatchMouseEvent(getLastButton(fixture), 'click');
 
-      expect(paginator.pageIndex).toBe(10);
-      expect(component.latestPageEvent ? component.latestPageEvent.pageIndex : null).toBe(10);
+      expect(paginator.pageIndex).toBe(9);
+      expect(component.latestPageEvent ? component.latestPageEvent.pageIndex : null).toBe(9);
     });
 
     it('should be able to go to the first page via the first page button', () => {

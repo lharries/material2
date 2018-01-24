@@ -90,6 +90,8 @@ describe('MatPaginator', () => {
 
       expect(getPreviousButton(fixture).getAttribute('aria-label')).toBe('Previous page');
       expect(getNextButton(fixture).getAttribute('aria-label')).toBe('Next page');
+      expect(getFirstButton(fixture).getAttribute('aria-label')).toBe('First page');
+      expect(getLastButton(fixture).getAttribute('aria-label')).toBe('Last page');
     });
 
     it('should re-render when the i18n labels change',
@@ -253,7 +255,7 @@ describe('MatPaginator', () => {
     expect(fixture.nativeElement.querySelector('.mat-select')).toBeNull();
   });
 
- it('should handle the number inputs being passed in as strings', () => {
+  it('should handle the number inputs being passed in as strings', () => {
     const withStringFixture = TestBed.createComponent(MatPaginatorWithStringValues);
     const withStringPaginator = withStringFixture.componentInstance.paginator;
 
@@ -285,6 +287,14 @@ function getPreviousButton(fixture: ComponentFixture<any>) {
 
 function getNextButton(fixture: ComponentFixture<any>) {
   return fixture.nativeElement.querySelector('.mat-paginator-navigation-next');
+}
+
+function getFirstButton(fixture: ComponentFixture<any>) {
+    return fixture.nativeElement.querySelector('.mat-paginator-navigation-first');
+}
+
+function getLastButton(fixture: ComponentFixture<any>) {
+    return fixture.nativeElement.querySelector('.mat-paginator-navigation-last');
 }
 
 @Component({

@@ -127,6 +127,26 @@ describe('MatPaginator', () => {
       expect(component.latestPageEvent ? component.latestPageEvent.pageIndex : null).toBe(0);
     });
 
+    it('should be able to go to the last page via the last page button', () => {
+      expect(paginator.pageIndex).toBe(0);
+
+      dispatchMouseEvent(getLastButton(fixture), 'click');
+
+      expect(paginator.pageIndex).toBe(10);
+      expect(component.latestPageEvent ? component.latestPageEvent.pageIndex : null).toBe(10);
+    });
+
+    it('should be able to go to the first page via the first page button', () => {
+      paginator.pageIndex = 3;
+      fixture.detectChanges();
+      expect(paginator.pageIndex).toBe(3);
+
+      dispatchMouseEvent(getFirstButton(fixture), 'click');
+
+      expect(paginator.pageIndex).toBe(0);
+      expect(component.latestPageEvent ? component.latestPageEvent.pageIndex : null).toBe(0);
+    });
+
     it('should disable navigating to the next page if at last page', () => {
       component.goToLastPage();
       fixture.detectChanges();
@@ -146,6 +166,30 @@ describe('MatPaginator', () => {
 
       component.latestPageEvent = null;
       dispatchMouseEvent(getPreviousButton(fixture), 'click');
+
+      expect(component.latestPageEvent).toBe(null);
+      expect(paginator.pageIndex).toBe(0);
+    });
+
+    it('should disable navigating by the last page button if at last page', () => {
+      component.goToLastPage();
+      fixture.detectChanges();
+      expect(paginator.pageIndex).toBe(10);
+      expect(paginator.hasNextPage()).toBe(false);
+
+      component.latestPageEvent = null;
+      dispatchMouseEvent(getLastButton(fixture), 'click');
+
+      expect(component.latestPageEvent).toBe(null);
+      expect(paginator.pageIndex).toBe(10);
+    });
+
+    it('should disable navigating by the first page button if at first page', () => {
+      expect(paginator.pageIndex).toBe(0);
+      expect(paginator.hasPreviousPage()).toBe(false);
+
+      component.latestPageEvent = null;
+      dispatchMouseEvent(getFirstButton(fixture), 'click');
 
       expect(component.latestPageEvent).toBe(null);
       expect(paginator.pageIndex).toBe(0);

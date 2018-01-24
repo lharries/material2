@@ -100,6 +100,9 @@ export class MatPaginator implements OnInit, OnDestroy {
   /** Whether to hide the page size selection UI from the user. */
   @Input() hidePageSize = false;
 
+  /** Whether to hide the got to first and got to last UI from the user. */
+  @Input() hideFirstLast = false;
+
   /** Event emitted when the paginator changes the page size or page index. */
   @Output() page = new EventEmitter<PageEvent>();
 
@@ -134,6 +137,22 @@ export class MatPaginator implements OnInit, OnDestroy {
     this._emitPageEvent();
   }
 
+  /** Move to the first page if not already there. */
+  firstPage(): void {
+    // hasPreviousPage being false implies at the start
+    if (!this.hasPreviousPage()) { return; }
+    this.pageIndex = 0;
+    this._emitPageEvent();
+  }
+
+  /** Move back to the previous page if it exists. */
+  lastPage(): void {
+    // hasNextPage being false implies at the end
+    if (!this.hasNextPage()) { return; }
+    this.pageIndex = this.getNumberOfPages();
+    this._emitPageEvent();
+  }
+
   /** Whether there is a previous page. */
   hasPreviousPage(): boolean {
     return this.pageIndex >= 1 && this.pageSize != 0;
@@ -141,9 +160,15 @@ export class MatPaginator implements OnInit, OnDestroy {
 
   /** Whether there is a next page. */
   hasNextPage(): boolean {
-    const numberOfPages = Math.ceil(this.length / this.pageSize) - 1;
+    const numberOfPages = this.getNumberOfPages();
     return this.pageIndex < numberOfPages && this.pageSize != 0;
   }
+
+  /** Calculate the number of pages */
+  getNumberOfPages(): number {
+    return Math.ceil(this.length / this.pageSize) - 1;
+  }
+
 
   /**
    * Changes the page size so that the first item displayed on the page will still be

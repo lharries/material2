@@ -87,6 +87,34 @@ $mat-paginator-button-increment-icon-margin: 16px;
   }
 }
 
+.mat-paginator-first {
+  transform: rotate(90deg);
+      width: 14px;
+      height: 8px;
+      float:left;
+      border-right: none
+}
+
+.mat-paginator-navigation-first {
+  .mat-paginator-increment {
+    margin-left: 18px;
+  }
+}
+
+.mat-paginator-navigation-last {
+  .mat-paginator-decrement {
+    float: left
+  }
+}
+
+.mat-paginator-last {
+  transform: rotate(90deg);
+  width: 14px;
+  height: 8px;
+  border-right: none;
+  margin-left: 18px;
+}
+
 .mat-paginator-range-actions {
   display: flex;
   align-items: center;

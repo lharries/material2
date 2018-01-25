@@ -31,7 +31,8 @@
             [attr.aria-label]="_intl.firstPageLabel"
             [matTooltip]="_intl.firstPageLabel"
             [matTooltipPosition]="'above'"
-            [disabled]="!hasPreviousPage()">
+            [disabled]="!hasPreviousPage()"
+            *ngIf="showFirstLastButtons">
       <div class="mat-paginator-first"></div>
     </button>
     <button mat-icon-button type="button"
@@ -58,7 +59,8 @@
             [attr.aria-label]="_intl.lastPageLabel"
             [matTooltip]="_intl.lastPageLabel"
             [matTooltipPosition]="'above'"
-            [disabled]="!hasNextPage()">
+            [disabled]="!hasNextPage()"
+            *ngIf="showFirstLastButtons">
       <div class="mat-paginator-last"></div>
     </button>
   </div>

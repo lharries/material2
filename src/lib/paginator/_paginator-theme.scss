@@ -17,11 +17,14 @@
   }
 
   .mat-paginator-decrement,
-  .mat-paginator-increment,
+  .mat-paginator-increment {
+    border-top: 2px solid mat-color($foreground, 'icon');
+    border-right: 2px solid mat-color($foreground, 'icon');
+  }
+
   .mat-paginator-first,
   .mat-paginator-last {
     border-top: 2px solid mat-color($foreground, 'icon');
-    border-right: 2px solid mat-color($foreground, 'icon');
   }
 
   .mat-icon-button[disabled] {

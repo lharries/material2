@@ -18,6 +18,16 @@ $mat-paginator-button-icon-width: 8px;
 $mat-paginator-button-increment-icon-margin: 12px;
 $mat-paginator-button-decrement-icon-margin: 16px;
 
+$mat-paginator-button-first-last-icon-width: 14px;
+
+$mat-paginator-button-first-icon-margin: 3px;
+$mat-paginator-button-last-icon-margin: 15px;
+
+
+$mat-paginator-button-first-decrement-icon-margin: 21px;
+$mat-paginator-button-last-increment-icon-margin: 9px;
+
+
 .mat-paginator {
   display: block;
 }
@@ -89,32 +99,30 @@ $mat-paginator-button-decrement-icon-margin: 16px;
 
 .mat-paginator-first {
   transform: rotate(90deg);
-  width: 14px;
-  height: 8px;
+  width: $mat-paginator-button-first-last-icon-width;
+  height: $mat-paginator-button-icon-height;
   float:left;
-  border-right: none;
-  margin-left: 3px;
+  margin-left: $mat-paginator-button-first-icon-margin;
 }
 
 .mat-paginator-navigation-first {
   .mat-paginator-decrement {
-    margin-left: 21px;
+    margin-left: $mat-paginator-button-first-decrement-icon-margin;
   }
 }
 
 .mat-paginator-navigation-last {
   .mat-paginator-increment {
     float: left;
-    margin-left: 9px;
+    margin-left: $mat-paginator-button-last-increment-icon-margin;
   }
 }
 
 .mat-paginator-last {
   transform: rotate(90deg);
-  width: 14px;
-  height: 8px;
-  border-right: none;
-  margin-left: 15px;
+  width: $mat-paginator-button-first-last-icon-width;
+  height: $mat-paginator-button-icon-height;
+  margin-left: $mat-paginator-button-last-icon-margin;
 }
 
 .mat-paginator-range-actions {

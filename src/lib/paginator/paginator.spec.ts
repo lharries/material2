@@ -201,7 +201,7 @@ describe('MatPaginator', () => {
       expect(paginator.pageIndex).toBe(0);
     });
 
-  })
+  });
 
   it('should mark for check when inputs are changed directly', () => {
     const rangeElement = fixture.nativeElement.querySelector('.mat-paginator-range-label');

@@ -16,8 +16,9 @@
     color: mat-color($foreground, secondary-text);
   }
 
-  .mat-paginator-increment,
+
   .mat-paginator-decrement,
+  .mat-paginator-increment,
   .mat-paginator-first,
   .mat-paginator-last {
     border-top: 2px solid mat-color($foreground, 'icon');
@@ -25,8 +26,8 @@
   }
 
   .mat-icon-button[disabled] {
-    .mat-paginator-increment,
     .mat-paginator-decrement,
+    .mat-paginator-increment,
     .mat-paginator-first,
     .mat-paginator-last {
       border-color: mat-color($foreground, 'disabled');

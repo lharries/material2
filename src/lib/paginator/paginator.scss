@@ -75,7 +75,6 @@ $mat-paginator-button-decrement-icon-margin: 16px;
 
 .mat-paginator-increment {
   margin-left: $mat-paginator-button-increment-icon-margin;
-<<<<<<< HEAD
   [dir='rtl'] & {
     margin-right: $mat-paginator-button-increment-icon-margin;
   }
@@ -83,14 +82,11 @@ $mat-paginator-button-decrement-icon-margin: 16px;
 
 .mat-paginator-decrement {
   margin-left: $mat-paginator-button-decrement-icon-margin;
-=======
->>>>>>> paginator-class-fix
   [dir='rtl'] & {
-    margin-right: $mat-paginator-button-increment-icon-margin;
+    margin-right: $mat-paginator-button-decrement-icon-margin;
   }
 }
 
-<<<<<<< HEAD
 .mat-paginator-first {
   transform: rotate(90deg);
   width: 14px;
@@ -103,12 +99,6 @@ $mat-paginator-button-decrement-icon-margin: 16px;
 .mat-paginator-navigation-first {
   .mat-paginator-decrement {
     margin-left: 21px;
-=======
-.mat-paginator-decrement {
-  margin-left: $mat-paginator-button-decrement-icon-margin;
-  [dir='rtl'] & {
-    margin-right: $mat-paginator-button-decrement-icon-margin;
->>>>>>> paginator-class-fix
   }
 }
 

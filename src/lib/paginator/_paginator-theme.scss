@@ -16,29 +16,19 @@
     color: mat-color($foreground, secondary-text);
   }
 
-<<<<<<< HEAD
-
   .mat-paginator-decrement,
   .mat-paginator-increment,
   .mat-paginator-first,
   .mat-paginator-last {
-=======
-  .mat-paginator-decrement,
-  .mat-paginator-increment {
->>>>>>> paginator-class-fix
     border-top: 2px solid mat-color($foreground, 'icon');
     border-right: 2px solid mat-color($foreground, 'icon');
   }
 
   .mat-icon-button[disabled] {
     .mat-paginator-decrement,
-<<<<<<< HEAD
     .mat-paginator-increment,
     .mat-paginator-first,
     .mat-paginator-last {
-=======
-    .mat-paginator-increment {
->>>>>>> paginator-class-fix
       border-color: mat-color($foreground, 'disabled');
     }
   }

@@ -15,8 +15,8 @@ $mat-paginator-button-margin: 8px;
 $mat-paginator-button-icon-height: 8px;
 $mat-paginator-button-icon-width: 8px;
 
-$mat-paginator-button-decrement-icon-margin: 12px;
-$mat-paginator-button-increment-icon-margin: 16px;
+$mat-paginator-button-increment-icon-margin: 12px;
+$mat-paginator-button-decrement-icon-margin: 16px;
 
 .mat-paginator {
   display: block;
@@ -74,16 +74,16 @@ $mat-paginator-button-increment-icon-margin: 16px;
 }
 
 .mat-paginator-increment {
-  margin-left: $mat-paginator-button-decrement-icon-margin;
+  margin-left: $mat-paginator-button-increment-icon-margin;
   [dir='rtl'] & {
-    margin-right: $mat-paginator-button-decrement-icon-margin;
+    margin-right: $mat-paginator-button-increment-icon-margin;
   }
 }
 
 .mat-paginator-decrement {
-  margin-left: $mat-paginator-button-increment-icon-margin;
+  margin-left: $mat-paginator-button-decrement-icon-margin;
   [dir='rtl'] & {
-    margin-right: $mat-paginator-button-increment-icon-margin;
+    margin-right: $mat-paginator-button-decrement-icon-margin;
   }
 }
 

@@ -104,7 +104,7 @@ export class MatPaginator implements OnInit, OnDestroy {
   @Input() showFirstLastButtons = false;
 
   /** Event emitted when the paginator changes the page size or page index. */
-  @Output() page = new EventEmitter<PageEvent>();
+  @Output() readonly page = new EventEmitter<PageEvent>();
 
   /** Displayed set of page size options. Will be sorted and include current page size. */
   _displayedPageSizeOptions: number[];

@@ -26,7 +26,6 @@ import {
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {
-  applyCssTransform,
   CanColor,
   CanDisable,
   CanDisableRipple,
@@ -130,7 +129,8 @@ export class MatSlideToggle extends _MatSlideToggleMixinBase implements OnDestro
     this._changeDetectorRef.markForCheck();
   }
   /** An event will be dispatched each time the slide-toggle changes its value. */
-  @Output() change: EventEmitter<MatSlideToggleChange> = new EventEmitter<MatSlideToggleChange>();
+  @Output() readonly change: EventEmitter<MatSlideToggleChange> =
+      new EventEmitter<MatSlideToggleChange>();
 
   /** Returns the unique id for the visual hidden input. */
   get inputId(): string { return `${this.id || this._uniqueId}-input`; }
@@ -340,7 +340,7 @@ class SlideToggleRenderer {
     this._thumbEl.classList.remove('mat-dragging');
 
     // Reset the transform because the component will take care of the thumb position after drag.
-    applyCssTransform(this._thumbEl, '');
+    this._thumbEl.style.transform = '';
 
     return this.dragPercentage > 50;
   }
@@ -350,7 +350,7 @@ class SlideToggleRenderer {
     this.dragPercentage = this._getDragPercentage(distance);
     // Calculate the moved distance based on the thumb bar width.
     const dragX = (this.dragPercentage / 100) * this._thumbBarWidth;
-    applyCssTransform(this._thumbEl, `translate3d(${dragX}px, 0, 0)`);
+    this._thumbEl.style.transform = `translate3d(${dragX}px, 0, 0)`;
   }
 
   /** Retrieves the percentage of thumb from the moved distance. Percentage as fraction of 100. */
